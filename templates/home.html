@@ -1,12 +1,14 @@
-<h1>Message board homepage</h1>
-<ul>
+{% extends 'base.html' %}
 
-  {% for post in all_posts_list %}
-    <li>{{ post }}</li>
+{% block content %}
+  {% for post in object_list %}
+
+    <div class="post-entry">
+
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.body }}</p>
+
+    </div>
+
   {% endfor %}
-
-</ul>
-
-<footer>
-  <h1>End of the message board</h1>
-</footer>
+{% endblock content %}
